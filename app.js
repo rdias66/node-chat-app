@@ -1,9 +1,10 @@
-const socketModule = require('./server_modules/socket/socket');
-const express = require('express');
+import socketModule from './server_modules/socket/socket.js';
+import express from 'express';
+import http from 'http';
+import { Server } from "socket.io";
+
 const app = express();
-const http = require('http');
 const server = http.createServer(app);
-const { Server } = require("socket.io");
 const io = new Server(server);
 
 app.get('/', (req, res) => {
@@ -14,4 +15,4 @@ socketModule.handleConnection(io);
 
 server.listen(3000, () => {
   console.log('listening on *:3000');
-});
+}); 

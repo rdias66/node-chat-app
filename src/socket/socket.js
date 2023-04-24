@@ -1,4 +1,4 @@
-const  handleConnection = (io) => {
+export default handleConnection = (io) => {
   io.on('connection', (socket) => {
     console.log('New user connected');
 
@@ -14,7 +14,3 @@ const  handleConnection = (io) => {
     });
   });
 }
-
-module.exports = {
-  handleConnection
-};

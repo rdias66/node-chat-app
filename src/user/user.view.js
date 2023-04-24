@@ -20,4 +20,4 @@ app.put('/updateUser/:id', updateUser)
 // Delete a user
 app.delete('/deleteUser/:id', deleteUser)
 
-app.listen(3000, () => console.log('Server running on port 3000'))
+

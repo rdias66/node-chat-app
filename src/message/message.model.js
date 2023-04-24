@@ -24,8 +24,5 @@ class Message {
   async findAll() {
     return await prisma.user.findAll()
   }
-
-  
 }
-
 export default Message

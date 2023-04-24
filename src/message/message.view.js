@@ -10,5 +10,3 @@ app.post('/createMessage', createMessage)
 app.get('/getMessageById', getMessagesById)
 
 app.get('/getAllMessages', getAllMessages)
-
-app.listen(3000, () => console.log('Server running on port 3000'))
