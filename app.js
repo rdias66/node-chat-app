@@ -1,4 +1,6 @@
-import socketModule from './server_modules/socket/socket.js';
+import socketModule from './src/socket/socket.js';
+import userRoutes from './src/user/user.routes.js';
+import messageRoutes from './src/message/message.routes.js';
 import express from 'express';
 import http from 'http';
 import { Server } from "socket.io";
@@ -12,6 +14,10 @@ app.get('/', (req, res) => {
 });
 
 socketModule.handleConnection(io);
+
+app.use(userRoutes);
+
+app.use(messageRoutes);
 
 server.listen(3000, () => {
   console.log('listening on *:3000');
