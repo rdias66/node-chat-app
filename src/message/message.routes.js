@@ -1,5 +1,5 @@
 import express from 'express'
-import { createMessage ,getMessagesById, getAllMessages  } from './controller.js'
+import { createMessage ,getMessagesById, getAllMessages  } from './user.controller.js'
 
 export const messageRoutes = express.Router()
 
