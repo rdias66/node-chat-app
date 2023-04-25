@@ -1,4 +1,4 @@
-import message from './model.js'
+import message from './user.model.js'
 
 export const createMessage = async (req, res) => {
   const  content = req.body
