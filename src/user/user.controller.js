@@ -1,4 +1,4 @@
-import user from './model.js'
+import user from './user.model.js'
 
 export const createUser = async (req, res) => {
   const { name } = req.body
