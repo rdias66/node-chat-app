@@ -9,15 +9,15 @@ const app = express();
 const server = http.createServer(app);
 const io = new Server(server);
 
-app.get('/', (req, res) => {
+socketModule.handleConnection(io); //setup io connection for chat 
+
+app.get('/', (req, res) => {      //send html test file for server ( to be changed for frontend rep)
   res.sendFile(__dirname + '/index.html');
 });
 
-socketModule.handleConnection(io);
-
-app.use(userRoutes);
-
-app.use(messageRoutes);
+app.use(userRoutes);  // setup user crud routes
+ 
+app.use(messageRoutes); // setup message crud (for db storage, the chat itself stays on frontend)
 
 server.listen(3000, () => {
   console.log('listening on *:3000');
